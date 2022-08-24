@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import PropType from 'prop-types';
 
-class Forms extends Component {
+class Form extends Component {
   render() {
     const { cardName,
       cardDescription,
@@ -106,9 +107,9 @@ class Forms extends Component {
   }
 }
 
-export default Forms;
+export default Form;
 
-Forms.propTypes = {
+Form.propTypes = {
   cardName: PropType.string,
   cardDescription: PropType.string,
   cardAttr1: PropType.string,
@@ -117,9 +118,9 @@ Forms.propTypes = {
   cardImage: PropType.string,
   cardRare: PropType.string,
   cardTrunfo: PropType.bool,
-  hasTrunfo: PropType.bool,
+  /* hasTrunfo: PropType.bool, */
   isSaveButtonDisabled: PropType.bool,
-  /* onInputChange: PropType.func,
-  onSaveButtonClick: PropType.func, */
+  onInputChange: PropType.func,
+  onSaveButtonClick: PropType.func,
 
 }.isRequired;
