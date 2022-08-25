@@ -104,7 +104,16 @@ class Form extends Component {
             id="button"
             data-testid="save-button"
             disabled={ isSaveButtonDisabled }
-            onClick={ onSaveButtonClick }
+            onClick={ () => onSaveButtonClick({
+              cardName,
+              cardDescription,
+              cardImage,
+              cardAttr1,
+              cardAttr2,
+              cardAttr3,
+              cardRare,
+              cardTrunfo,
+            }) }
           >
             Salvar
 

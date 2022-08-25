@@ -14,6 +14,7 @@ class App extends React.Component {
     cardTrunfo: false,
     /* hasTrunfo: true, */
     isSaveButtonDisabled: true,
+    data: [],
   };
 
   saveForm = () => {
@@ -47,7 +48,20 @@ class App extends React.Component {
     const value = type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: value,
-    }, () => console.log(this.saveForm()));
+    }, () => this.saveForm());
+  };
+
+  onSaveButtonClick = (objetoInfo) => {
+    this.setState((prevState) => ({
+      data: [...prevState.data, objetoInfo],
+      cardName: '',
+      cardDescription: '',
+      cardImage: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      cardRare: 'normal',
+    }));
   };
 
   render() {
@@ -77,6 +91,7 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
           cardName={ cardName }
