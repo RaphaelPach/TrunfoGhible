@@ -22,6 +22,7 @@ class Form extends Component {
           <label htmlFor="name">
             Nome:
             <input
+              name="cardName"
               data-testid="name-input"
               value={ cardName }
               onChange={ onInputChange }
@@ -30,6 +31,7 @@ class Form extends Component {
           <label htmlFor="textarea">
             Descrição:
             <textarea
+              name="cardDescription"
               data-testid="description-input"
               value={ cardDescription }
               onChange={ onInputChange }
@@ -38,6 +40,7 @@ class Form extends Component {
           <label htmlFor="Number">
             Atr01:
             <input
+              name="cardAttr1"
               type="number"
               data-testid="attr1-input"
               value={ cardAttr1 }
@@ -47,6 +50,7 @@ class Form extends Component {
           <label htmlFor="Number">
             Atr02:
             <input
+              name="cardAttr2"
               type="number"
               data-testid="attr2-input"
               value={ cardAttr2 }
@@ -56,6 +60,7 @@ class Form extends Component {
           <label htmlFor="Number">
             Atr03:
             <input
+              name="cardAttr3"
               type="number"
               data-testid="attr3-input"
               value={ cardAttr3 }
@@ -65,6 +70,7 @@ class Form extends Component {
           <label htmlFor="image">
             image
             <input
+              name="cardImage"
               data-testid="image-input"
               value={ cardImage }
               onChange={ onInputChange }
@@ -72,6 +78,7 @@ class Form extends Component {
           </label>
           <label htmlFor="selected">
             <select
+              name="cardRare"
               data-testid="rare-input"
               value={ cardRare }
               onChange={ onInputChange }
@@ -84,6 +91,7 @@ class Form extends Component {
           <label htmlFor="checkbox">
             Super trunfo
             <input
+              name="cardTrunfo"
               type="checkBox"
               data-testid="trunfo-input"
               checked={ cardTrunfo }
@@ -91,6 +99,7 @@ class Form extends Component {
             />
           </label>
           <button
+            name="isSaveButtonDisabled"
             type="button"
             id="button"
             data-testid="save-button"

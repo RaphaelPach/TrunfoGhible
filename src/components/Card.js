@@ -15,47 +15,27 @@ class Card extends Component {
     return (
       <div>
         <h3 data-testid="name-card">
-          value=
           { cardName }
         </h3>
-        <div>
-          <img data-testid="image-card" src={ cardImage } alt={ cardName } />
-        </div>
-        <div>
-          <p data-testid="description-card">
-            value=
-            { cardDescription }
-          </p>
-        </div>
-        <div>
-          <p data-testid="attr1-card">
-            value=
-            { cardAttr1 }
-          </p>
-        </div>
-        <div>
-          <p data-testid="attr2-card">
-            value=
-            { cardAttr2 }
-          </p>
-        </div>
-        <div>
-          <p data-testid="attr3-card">
-            value=
-            { cardAttr3 }
-          </p>
-        </div>
-        <div>
-          <p data-testid="rare-card">
-            value=
-            { cardRare }
-          </p>
-        </div>
-        <div>
-          {
-            (cardTrunfo) && <p data-testid="trunfo-card">Super Trunfo</p>
-          }
-        </div>
+        <img data-testid="image-card" src={ cardImage } alt={ cardName } />
+        <p data-testid="description-card">
+          { cardDescription }
+        </p>
+        <p data-testid="attr1-card">
+          { cardAttr1 }
+        </p>
+        <p data-testid="attr2-card">
+          { cardAttr2 }
+        </p>
+        <p data-testid="attr3-card">
+          { cardAttr3 }
+        </p>
+        <p data-testid="rare-card">
+          { cardRare }
+        </p>
+        {
+          (cardTrunfo) && <p data-testid="trunfo-card">Super Trunfo</p>
+        }
       </div>
 
     );
