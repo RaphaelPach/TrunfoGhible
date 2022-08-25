@@ -74,8 +74,9 @@ class App extends React.Component {
       cardAttr3,
       cardRare,
       cardTrunfo,
-      /* hasTrunfo, */
+      // hasTrunfo,
       isSaveButtonDisabled,
+      data,
     } = this.state;
     return (
       <div>
@@ -92,6 +93,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.onSaveButtonClick }
+          hasTrunfo={ data.some((digimon) => digimon.cardTrunfo === true) }
         />
         <Card
           cardName={ cardName }
