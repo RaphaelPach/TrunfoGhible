@@ -15,12 +15,22 @@ class Form extends Component {
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick } = this.props;
+    const card = {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardRare,
+      cardTrunfo,
+    };
     return (
-      <>
-        <h1>Adiciona nova carta</h1>
-        <form action="">
+      <form className="formSide">
+        <div className="agumon">
           <label htmlFor="name">
             Nome:
+            <br />
             <input
               name="cardName"
               data-testid="name-input"
@@ -28,8 +38,11 @@ class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="textarea">
+        </div>
+        <div className="agumon">
+          <label htmlFor="textarea" rows="250" cols="175">
             Descrição:
+            <br />
             <textarea
               name="cardDescription"
               data-testid="description-input"
@@ -37,9 +50,12 @@ class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
+        </div>
+        <div className="agumon">
           <label htmlFor="Number">
             Atr01:
             <input
+              className="patamon"
               name="cardAttr1"
               type="number"
               data-testid="attr1-input"
@@ -47,9 +63,12 @@ class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
+        </div>
+        <div className="agumon">
           <label htmlFor="Number">
             Atr02:
             <input
+              className="patamon"
               name="cardAttr2"
               type="number"
               data-testid="attr2-input"
@@ -57,9 +76,12 @@ class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
+        </div>
+        <div className="agumon">
           <label htmlFor="Number">
             Atr03:
             <input
+              className="patamon"
               name="cardAttr3"
               type="number"
               data-testid="attr3-input"
@@ -67,28 +89,37 @@ class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
+        </div>
+        <div className="agumon">
           <label htmlFor="image">
-            image
+            Imagem:
             <input
+              className="patamon"
               name="cardImage"
               data-testid="image-input"
               value={ cardImage }
               onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="selected">
-            <select
-              name="cardRare"
-              data-testid="rare-input"
-              value={ cardRare }
-              onChange={ onInputChange }
-            >
-              <option>normal</option>
-              <option>raro</option>
-              <option>muito raro</option>
-            </select>
-          </label>
-          <label htmlFor="checkbox">
+        </div>
+
+        <label htmlFor="selected" className="selected">
+          Raridade:
+          <select
+            className="patamon"
+            name="cardRare"
+            data-testid="rare-input"
+            value={ cardRare }
+            onChange={ onInputChange }
+          >
+            <option value="Normal">Normal</option>
+            <option value="Raro">Raro</option>
+            <option value="Muito raro">Muito raro</option>
+          </select>
+        </label>
+
+        <div className="agumon">
+          <label htmlFor="checkbox" className="selected">
             Super trunfo
             {
               !hasTrunfo ? (<input
@@ -101,29 +132,22 @@ class Form extends Component {
                 : <p>Você já tem um Super Trunfo em seu baralho</p>
             }
           </label>
+        </div>
+        <div className="agumon">
           <button
+            className="button"
             name="isSaveButtonDisabled"
             type="button"
             id="button"
             data-testid="save-button"
             disabled={ isSaveButtonDisabled }
-            onClick={ () => onSaveButtonClick({
-              cardName,
-              cardDescription,
-              cardImage,
-              cardAttr1,
-              cardAttr2,
-              cardAttr3,
-              cardRare,
-              cardTrunfo,
-            }) }
+            onClick={ () => onSaveButtonClick(card) }
           >
             Salvar
-
           </button>
-        </form>
+        </div>
+      </form>
 
-      </>
     );
   }
 }
